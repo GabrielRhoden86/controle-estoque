@@ -1,0 +1,154 @@
+
+
+*{
+  padding: 0;
+  border:0;
+}
+
+body {
+  color: #444444;
+  height:120vh;
+}
+
+.navbar-toggler-icon{
+  color:white;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+  /* Formulário (Início)*/
+  button:focus {
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+  }
+  
+  /* Estilo Tabela Final da Página (Início)*/
+  .dataTables_wrapper .dataTables_filter input {
+    background-color: white !important;  
+  }
+  
+  .dataTables_wrapper .dataTables_filter input:focus {
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+    border:solid 1px rgb(126, 221, 31);
+  }
+  
+  .paginate_button {
+    z-index: 1 !important;
+    color: #fff !important;
+    border: #cecece 1px solid !important;
+    padding: 4px !important;
+    font-size: 13px !important;
+  }
+  
+  .icons {
+    text-align: center;
+  }
+  
+  .icons img {
+    cursor: pointer;
+    margin-left:13px;
+  }
+  
+  table.dataTable.nowrap th,
+  table.dataTable.nowrap td {
+    text-align: center !important;
+    font-size:16px;
+  }
+  
+  .sorting {
+    color: #7f7e7e;
+  }
+  
+  .even,
+  .odd {
+    font-size: 11.5px;
+    color: gray;
+    text-align: center;
+  }
+  
+  /* Icone sorting filtro */
+  .dataTable>thead>tr>th[class*="sort"]:before,
+  .dataTable>thead>tr>th[class*="sort"]:after {
+    content: "" !important;
+  }
+  
+  #example_info, #example2_info {
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .title_tab th:nth-child( -n + 3 ){
+    padding:3px !important; 
+    }
+    table.dataTable.display>tbody>tr{
+        box-shadow: none !important;
+    }
+  /* Estilo Tabela Final da Página (Fim) */
+    
+
+  /* Modal Delete */
+  
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+
+button{
+    font-size: calc(12px + (16 - 12) * ((100vw - 360px) / (1600 - 300))) !important;
+}
+
+ p {
+    font-size: calc(13px + (16 - 13) * ((100vw - 360px) / (1600 - 300))) !important;
+}
+
+
+button:focus {
+    box-shadow: none !important;
+    outline-width: 0;
+}
+
+.card{
+    border-radius :12px;
+    width: calc(500px + 10 * ((100vw - 320px) / 680)) ;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8) ;
+}
+
+.card-header{
+    border-radius :12px !important;
+}
+
+.modal-body .btn-danger{
+    border-radius: 11px ;
+    box-shadow:  0px 5px 5px rgba(0, 0, 0, 0.2) ;
+}
+ .btn-light{
+     background: transparent !important;
+     border:0px !important;
+ }
+
+ .btn-light:hover{
+    border-color:#fff !important;
+ }
+
+ .btn-light:active{
+    border-color:#fff !important;
+ }
+
+@media (max-width: 526px) {
+    .card{
+        width: unset;
+    } 
+}
+
+span{
+    font-size: 30px !important;
+}
+
+.modal-content{
+    background: transparent !important;
+}
