@@ -17,13 +17,11 @@
           objData.estoque = estoque;
   
           $.ajax({
-             //url: DIRPAGE,
-             url:'http://localhost/mercado/produto/toCreate',
+             url:'http://localhost/controle-estoque/produto/toCreate',
              data: objData,
              method: "POST",
              dataType: "json",
              success: function (obj) {
-  
                 Swal.fire({
                    title: obj.result.msg,
                    text: 'Agora você será direcionado para realizar o upload de images para o produto cadastrado!',
@@ -32,22 +30,18 @@
                   allowOutsideClick: false,          
                 }).then (function (result) {
                  if (result.value) {
-                   window.location.href = "http://localhost/mercado/upload/?id=2";
+                   window.location.href = "http://localhost/controle-estoque/upload/?id=2";
                  }
                });
 
-                //-Listar o novo registro na tabel-//
-                //listarRegistros();
-  
                 //----Limpar Inputs e Divs------//
                 $("#descricao").val("");
                 $("#valor_produto").val("");
                 $("#estoque").val("");
-          
              },
              error: function (xhr, ajaxOptions, thrownError) {
                 var erroJson = JSON.stringify(xhr);
-                alert("ERRO! Buscar risco/afetação " + thrownError + "-" + erroJson);
+                alert("ERRO!! Buscar risco/afetação " + thrownError + "-" + erroJson);
                 //var msgLog = 'Buscar risco/afetação , ERRO :' + erroJson;
                 //var acaoLog = "erro_ajax";
                 //gravarLog(msgLog, acaoLog);

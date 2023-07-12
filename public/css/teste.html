@@ -1,0 +1,22 @@
+<style>
+    .input-com-botao {
+      position: relative;
+    }
+  
+    .botao-limpar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 20px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+  </style>
+  
+  <div class="input-com-botao">
+    <input type="text" id="campoDeEntrada">
+    <button class="botao-limpar" onclick="document.getElementById('campoDeEntrada').value = ''">X</button>
+  </div>
+  

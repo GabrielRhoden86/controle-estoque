@@ -27,5 +27,4 @@ class ControllerCadastroProduto extends ClassProduto
             $render->renderLayout();
         
     }
- 
 }

@@ -56,8 +56,8 @@ $(document).ready(function () {
                "color": "red",
                "font-size": "12px"
             });
+            
       } else {
-
          objData = new Object();
          objData.nome = nome;
          objData.sexo = sexo;

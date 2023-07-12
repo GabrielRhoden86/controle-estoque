@@ -1,12 +1,8 @@
-<meta charset="UTF-8">
 <div class="row col-md-12">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="<?php echo DIRLIB . "jQuery/jquery-3.6.1.min.js"; ?>"></script>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/d ist/css/bootstrap.min.css">
-
-<div class="col-md-12">
-    <a type="button" href="<?php echo DIRPAGE . "cadastro-produto"; ?>" class="btn btn-primary mt-2 mr-5 pr-3 float-right font-weight-bold text-light">Cadastro de Produto</a>
+  <div class="col-md-12 button-cadastro">
+   <a type="button" href="<?php echo DIRPAGE . "cadastro-produto"; ?>" class=" btn btn-primary mt-2 mr-5 float-right font-weight-bold text-light"><i class="bi bi-plus"></i>
+</i>
+</a>
    </div>
     <div class="text-center mt-3 col-md-12">
      <div class="tab-content pb-0 e-flex mt-0 col-md-12 rounded">
@@ -40,7 +36,6 @@
     </div>
    </div>
   </div> 
-
   <!--------------------modal---------------------->
  <div class="container d-flex justify-content-center">
   <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -56,7 +51,7 @@
               </div>
               <p class="font-weight-bold mb-2"> Tem certeja que deseja excluir o produto?</p>
             </div>
-            <form id="formDelete" action="http://localhost/mercado/produto/deleting" method="POST">
+            <form id="formDelete" action="http://localhost/controle-estoque/produto/deleting" method="POST">
               <p class="text-muted p-1">
                 <input class="mr-2 ml-3" type='checkbox' id='id' name='id[]' value=''>Marque esta opção para excluir o produto.
               </p>
@@ -64,7 +59,7 @@
               <div class="card-body px-sm-4 mb-2 pt-1 pb-0">
                 <div class="row justify-content-end no-gutters">
                   <div class="col-auto">
-                    <button type="button" class="btn btn-light text-muted" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-light text-muted mr-2" data-dismiss="modal">Cancel</button>
                   </div>
                   <div class="col-auto">
                 <button type="submit" class="btn btn-danger px-4">Excluir</button>
@@ -73,11 +68,10 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
    </div>
   </div>
 </div>
-
 <!-- <div class="col-md-12">
 <div class="col-md-3 mt-4">
  <div class="card mb-4 shadow-sm ">
@@ -95,29 +89,3 @@
   </div>
 </div>
 </div> -->
-
-
-<script>
-  $(document).ready(function() {
-    $("#example").on("click", "td", function(event) {
-      var id = $(this).attr("id");
-      $("#id").val(id)
-    });
-  });
-</script>
-
-<style>
-  *{
-    /* border:solid red */
-  }
-
-  .tab-content .tab-pane {
-    background-color: white;
-    min-height: 350px;
-    /* opacity: .4; */
-  }
-
-  .dataTables_wrapper {
-    min-height: 350px !important;
-  }
-</style>

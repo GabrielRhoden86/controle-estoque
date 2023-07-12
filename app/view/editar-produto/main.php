@@ -1,6 +1,6 @@
     <!-----------------------------------------Formulário Inicio---------------------------------->
     <div class="row col-lg-8 d-flex justify-content-center mt-4 pb-5">
-      <form class="bg-white col-lg-8 p-2" method="POST" id="form_updat" action="http://localhost/mercado/produto/putUpdate">
+      <form class="bg-white col-lg-8 p-2" method="POST" id="form_update" action="http://localhost/controle-estoque/produto/putUpdate">
         <span id="numberId" class="text-center"></span>
       <h4 class="font-weight-bold text-muted mt-3 text-center">Editar Produtos</h4>
         <div class="form-row mt-3">
@@ -19,8 +19,8 @@
           <button type="submit" class="btn btn-primary buttons mb-3 mt-3 col-lg-12" id="btn-submit">Enviar</button>
       </form>
     </div>
-    <!-----------------------------------------Formulário Fim---------------------------------------->
-    <script src="<?php echo DIRLIB . 'jQuery/jquery-3.6.1.min.js' ?>"></script>
+    <!------------------------------Formulário Fim---------------------------->
+    <script src="<?php echo DIRLIB . 'jQuery/jquery-3.6.1.min.j s'?>"></script>
 
 
 

@@ -64,9 +64,7 @@ class Dispatch extends ClassRoutes
 
         if ($countArray > 1) {
             foreach ($this->parseUrl() as $key => $value) {
-
                 if ($key > 1) {
-
                     $this->setParam($this->param += [$key=>$value]);
                 }
             }
