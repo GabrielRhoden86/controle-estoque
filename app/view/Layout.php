@@ -23,23 +23,23 @@
     <div class="jumbotron-fluid text-center topHeader">
     <h4 class="text-light p-5">Controle de Estoque</h4>
    </div>
-   <nav class="navbar navbar-dark py-0 bg-primary navbar-expand-lg py-md-0  w-100">
+   <nav class="navbar navbar-dark-new py-0 nav-header-top navbar-expand-lg py-md-0  w-100">
     <button class="navbar-toggler mt-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-bars"></i>
+        <i class="fa fa-bars fa-2x icon-navbar-top"></i>
     </button>
    <div class="navbar-collapse collapse" id="navbarNav">
      <ul class="navbar-nav ">
           <li class="nav-item">
-            <a class="nav-link font-weight-bold text-light" href="<?php echo DIRPAGE."produto"; ?>">Produtos</a>
+            <a class="nav-link " href="<?php echo DIRPAGE."produto"; ?>">Produtos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link font-weight-bold text-light" href="<?php echo DIRPAGE . "cadastro-produto"; ?>">Cadastro Produto</a>
+            <a class="nav-link" href="<?php echo DIRPAGE . "cadastro-produto"; ?>">Cadastro Produto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link font-weight-bold text-light" href="<?php echo DIRPAGE . "pedido"; ?>">Pedidos</a>
+            <a class="nav-link" href="<?php echo DIRPAGE . "pedido"; ?>">Pedidos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link font-weight-bold text-light" href="<?php echo DIRPAGE . "cadastro-pedido"; ?>">Cadastrar Pedido</a>
+            <a class="nav-link" href="<?php echo DIRPAGE . "cadastro-pedido"; ?>">Cadastrar Pedido</a>
           </li>
        </ul>  
     </div>

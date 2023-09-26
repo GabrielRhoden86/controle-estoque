@@ -25,6 +25,7 @@ function listarProdutos() {
     $('#spinnerBox').addClass('spinner-border');
 
   var DIRPAGE = document.createElement('a');
+  
   DIRPAGE.href = window.location.href + "/getRead";
   objData = new Object();
   $.ajax({

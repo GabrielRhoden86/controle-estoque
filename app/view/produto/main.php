@@ -72,20 +72,4 @@
    </div>
   </div>
 </div>
-<!-- <div class="col-md-12">
-<div class="col-md-3 mt-4">
- <div class="card mb-4 shadow-sm ">
-  <img  class="" src="http://localhost/mercado/public/img/macarrao.jpeg"  width="210" height="200" alt="">
-    <div class="card-body">
-      <p class="">Macarrão paganini conchiglioni 500g</p>
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-primary">Editar</button>
-             <button type="button" class="btn btn-sm btn-outline-danger">Deletar</button>
-          </div>
-        <small class="text-muted">9 mins</small>
-      </div>
-    </div>
-  </div>
-</div>
-</div> -->
+
