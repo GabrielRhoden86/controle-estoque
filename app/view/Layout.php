@@ -14,9 +14,12 @@
   <link rel="stylesheet" href="<?php echo DIRLIB . 'bootstrap-4.1.3\css\bootstrap.min.css' ?>">
   <link rel="stylesheet" href="<?php echo DIRLIB . 'bootstrap-icons\font\bootstrap-icons.min.css' ?>">
   <link rel="stylesheet" href="<?php echo DIRLIB . '/DataTables/datatables.min.css' ?>" />
+  <link rel="stylesheet" href="<?php echo DIRCSS . 'pedido.css' ?>">
+  <link rel="stylesheet" href="<?php echo DIRCSS . 'produto.css' ?>">
+
   <script src="<?php echo DIRLIB . 'jQuery/jquery-3.6.1.min.js' ?>"></script>
   <script src="<?php echo DIRLIB . 'DataTables/datatables.min.js' ?>"></script>
-  <?php $this->addHead(); ?>
+  
   <title><?php echo $this->getTitle(); ?></title>
 </head>
 

@@ -20,7 +20,6 @@
       </form>
     </div>
     <!------------------------------Formulário Fim---------------------------->
-    <script src="<?php echo DIRLIB . 'jQuery/jquery-3.6.1.min.j s'?>"></script>
 
 
 

@@ -57,13 +57,13 @@ class ClassRender
         include_once(DIRREQ . "app/view/Layout.php");
     }
 
-    #Adicionando conteúdos - head, header, main e footer.
-    public function  addHead()
-    {
-        if (file_exists(DIRREQ . "app/view/{$this->getDir()}/head.php")) {
-            include_once(DIRREQ . "app/view/{$this->getDir()}/head.php");
-        }
-    }
+    #Adicionando conteúdos - head, header, main e footer.  obs vamos mudar isso para css
+    // public function  addHead()
+    // {
+    //     if (file_exists(DIRREQ . "app/view/{$this->getDir()}/head.php")) {
+    //         include_once(DIRREQ . "app/view/{$this->getDir()}/head.php");
+    //     }
+    // }
 
     public function  addHeader()
     {
