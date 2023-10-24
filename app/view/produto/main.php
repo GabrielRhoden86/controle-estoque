@@ -13,11 +13,10 @@
                 <th class="sub-title-tab" style="width:10%;">Id usuário</th>
                 <th>Imagem</th>
                 <th>Nome</th>
-                <th>Tags</th>
               </tr>
             </thead>
             <tbody id="table-body">
-              <!-- as linhas da tabela serão adicionadas aqui -->
+      ->
             </tbody>
           </table>
         </div>
@@ -25,6 +24,10 @@
       </div>
     </div>
 
+    <div class="mask-loading">
+      <img id="img-gif" src="public/gif/spinner.gif" alt="carregando..." width="100" height="100">
+      <!-- <span class="loading-text"><span class="mr-3">Carregando...</span> -->
+    </div>
 
     <!--------------------modal---------------------->
     <div class="container d-flex justify-content-center">
@@ -62,25 +65,3 @@
     </div>
   </div>
 </div>
-
-
-
-<style>
-
-</style>
-<!-- 
-<div class="col-md-2">
-              <div class="card mb-4 shadow-sm">
-              <img class="card-img-top" src="public/img/img_produto/cafe1.jpeg" alt="Card image cap" width="50" height="100">
-                <div class="card-body">
-                  <p class="card-text">Este é um card maior e que suporta texto abaixo, como uma introdução mais natural ao conteúdo adicional. No entanto, esse conteúdo é um pouco maior.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div> -->

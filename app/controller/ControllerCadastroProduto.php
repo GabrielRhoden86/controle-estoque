@@ -19,12 +19,12 @@ class ControllerCadastroProduto extends ClassProduto
 
     public function __construct()
     {
-           $render = new ClassRender();
-            $render->setTitle("Cadastro Produto");
-            $render->setDescription("Faça seu cadastro");
-            $render->setKeywords("Cadastro de Produto, cadastro");
-            $render->setDir("cadastro-produto");
-            $render->renderLayout();
+        $render = new ClassRender();
+        $render->setTitle("Cadastro Produto");
+        $render->setDescription("Faça seu cadastro");
+        $render->setKeywords("Cadastro de Produto, cadastro");
+        $render->setDir("cadastro-produto");
+        $render->renderLayout();
         
     }
 }

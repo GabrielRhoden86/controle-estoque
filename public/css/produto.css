@@ -12,8 +12,8 @@ body {
   color: white;
 }
 
-.table-produto{
-  margin-top:10%;
+.table-produto {
+  margin-top: 10%;
 }
 
 
@@ -31,18 +31,37 @@ body {
 /* Modal Delete */
 
 button {
-  font-size: calc(
-    12px + (16 - 12) * ((100vw - 360px) / (1600 - 300))
-  ) !important;
+  font-size: calc(12px + (16 - 12) * ((100vw - 360px) / (1600 - 300))) !important;
 }
 
 p {
-  font-size: calc(
-    13px + (16 - 13) * ((100vw - 360px) / (1600 - 300))
-  ) !important;
+  font-size: calc(13px + (16 - 13) * ((100vw - 360px) / (1600 - 300))) !important;
 }
 
 
+/* LOADING */
+img {
+  z-index: 1000;
+  margin-left: 45%;
+  margin-top: 15%;
+}
 
+.loading-text {
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+
+.mask-loading {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  background-color: #000;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+}
 
 

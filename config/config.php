@@ -22,6 +22,6 @@ define("DIRDS", DIRPAGE . "public/desing/");
 
 #Banco de Dados
 define("HOST", "localhost");
-define("DB", "db-site");
+define("DB", "classicmodels");
 define("USER", "root");
 define("PASS", "");

@@ -24,6 +24,7 @@ class ControllerProduto extends ClassProduto
             $render->setDir("produto");
             $render->renderLayout();
         }
+
     }
 
     public function recVariaveis()
@@ -57,29 +58,30 @@ class ControllerProduto extends ClassProduto
         $linhasTab = "";
         $msgAcao = "Inicio";
         $ObjCadastro = new ClassProduto();
-
+        $itemsLoja = [];
         $arrResult = json_decode($ObjCadastro->read(0, "", "", ""));
 
-        $linhasCab .=  "<th>Editar</th>";
-        $linhasCab .=  "<th>Excluir</th>";
-        $linhasCab .=  "<th>ID</th>";
-        $linhasCab .= "<th>Descrição</th>";
-        $linhasCab .=  "<th>Valor</th>";
-        $linhasCab .=  "<th>Estoque</th>";
-        $linhasCab .=  "<th>Imagem</th>";
+         //$linhasCab .=  "<th>Editar</th>";
+        //$linhasCab .=  "<th>Excluir</th>";
+        //$linhasCab .=  "<th>productCode</th>";
+        //$linhasCab .= "<th>productName</th>";
+        //$linhasCab .=  "<th>productLine</th>";
+        //$linhasCab .=  "<th>productDescription</th>";
 
         if ($arrResult->linhas > 0) {
             foreach ($arrResult->result as $val => $itemResult) {
 
-                $linhasTab .= "<tr>";
-                $linhasTab .= '<td ><a href="http://localhost/mercado/editar-produto/?id=' . $itemResult->id . '&descricao=' . $itemResult->descricao . '&valor_produto=' . $itemResult->valor_produto . '&estoque=' . $itemResult->estoque . '"><img src="public\img\edit.png"></a></td>';
-                $linhasTab .=   "<td id='$itemResult->id'  title='Delete' data-toggle='modal' data-target='#my-modal'class='icons'><img src='public\img\delete.gif' width='17' height='17'></td>";
-                $linhasTab .=   "<td>$itemResult->id</td>";
-                $linhasTab .=   "<td>$itemResult->descricao</td>";
-                $linhasTab .=   "<td>$itemResult->valor_produto</td>";
-                $linhasTab .=   "<td>$itemResult->estoque</td>";
-                $linhasTab .=   "<td>img</td>";
-                $linhasTab .= "</tr>";
+                //$linhasTab .= "<tr>";
+                //$linhasTab .= '<td ><a href="http://localhost/mercado/editar-produto/?id=' . $itemResult->id . '&descricao=' . $itemResult->descricao . '&valor_produto=' . $itemResult->valor_produto . '&estoque=' . $itemResult->estoque . '"><img src="public\img\edit.png"></a></td>';
+                //$linhasTab .=   "<td id='$itemResult->productCode'  title='Delete' data-toggle='modal' data-target='#my-modal'class='icons'><img src='public\img\delete.gif' width='17' height='17'></td>";
+                $linhasTab .=   $itemResult->productCode;
+                $linhasTab .=   $itemResult->productName;
+                $linhasTab .=   $itemResult->productLine;
+                $linhasTab .=   $itemResult->productDescription;
+                //$linhasTab .=   "<td>img</td>";
+                //$linhasTab .= "</tr>";
+
+               $itemsLoja = $itemResult;
             }
 
             $msgAcao .= '|Buscou dados';
@@ -91,6 +93,7 @@ class ControllerProduto extends ClassProduto
         $result = array(
             "tabCab" =>  $linhasCab,
             "tabLinha" => $linhasTab,
+            "itemsLoja" =>  $itemsLoja,
         );
         $itens = array(
             "result" => $result,

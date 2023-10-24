@@ -37,8 +37,7 @@ class ControllerCadastroImagem extends ClassCadastroImagem
 
     }
 
-    
-
+  
     function uploadImages(){
 
       $this-> recVariaveis();
