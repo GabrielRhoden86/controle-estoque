@@ -16,7 +16,6 @@ class ClassProduto extends ClassConexao
     public function __construct()
     {
         $this->customLogger = new CustomLogger();
-
     }
 
     protected function create($descricao, $valor_produto, $estoque)
@@ -40,7 +39,6 @@ class ClassProduto extends ClassConexao
 
     public function read()
     {
-
         try {
             $Bfetch = $this->dB = $this->conexaoDb()->prepare(
             "SELECT productCode, productName, productLine, productDescription 
@@ -78,10 +76,9 @@ class ClassProduto extends ClassConexao
                 return json_encode($items);
             }
         } catch (Exception $e) {
-
             $msgStatus = __FUNCTION__ . ' - ' . $e->getMessage();
             $class = get_class($this);
-            $this->customLogger->logError("ERROR FUNCTION: " .   $msgStatus.' - '.$class);
+            $this->customLogger->logError("FUNCTION: " .   $msgStatus.' - '.$class);
         }
     }
 
@@ -93,8 +90,8 @@ class ClassProduto extends ClassConexao
             $Bfetch->bindParam(":descricao", $descricao, \PDO::PARAM_STR);
             $Bfetch->bindParam(":valor_produto", $valor_produto, \PDO::PARAM_STR);
             $Bfetch->bindParam(":estoque", $estoque, \PDO::PARAM_STR);
-
             $Bfetch->execute();
+
         } catch (Exception $e) {
             $msgStatus = __FUNCTION__ . ' - ' . $e->getMessage();
             $class = get_class($this);

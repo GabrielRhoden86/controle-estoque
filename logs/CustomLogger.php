@@ -5,8 +5,8 @@ namespace Logs\CustomLogger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Formatter\LineFormatter;
-require __DIR__ . "/../vendor/autoload.php";
 
+require __DIR__ . "/../vendor/autoload.php";
 
 date_default_timezone_set('America/Sao_Paulo');
 
@@ -18,7 +18,7 @@ class CustomLogger
     {
         $this->logger = new Logger("web");
 
-        $streamHandler = new StreamHandler("log.txt", Logger::DEBUG);
+        $streamHandler = new StreamHandler(__DIR__."/log.log", Logger::DEBUG);
         $lineFormatter = new LineFormatter("[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n", "Y-m-d H:i:s");
         $streamHandler->setFormatter($lineFormatter);
 

@@ -1,3 +1,0 @@
-[2023-11-08 14:11:33] web.ERROR: ERROR FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductLine' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost"}
-[2023-11-08 14:12:57] web.ERROR: ERROR FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductLine' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}
-[2023-11-08 14:13:22] web.ERROR: ERROR FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductLine' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","OPENSSL_CONF":"C:/xampp/apache/bin/openssl.cnf","REQUEST_METHOD":"POST"}

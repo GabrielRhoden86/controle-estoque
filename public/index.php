@@ -5,4 +5,3 @@ require_once("../config/config.php");
 
 $dispatch = new App\Dispatch();
 
-    
