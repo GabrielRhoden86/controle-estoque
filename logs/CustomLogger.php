@@ -35,12 +35,6 @@ class CustomLogger
         });
     }
 
-    // caso seja necessário algum argumento a mais   
-    //  public function logDebug($message, $context= [])
-    //     {
-    //         $this->logger->debug($message, $context);
-    //     }
-
     
     public function logDebug($message)
     {
