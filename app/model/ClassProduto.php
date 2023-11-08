@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Model;
-
 use App\Model\ClassConexao;
+use Logs\CustomLogger\CustomLogger;
+require_once __DIR__ . '/../../logs/CustomLogger.php';
+
 use Exception;
 
 class ClassProduto extends ClassConexao
@@ -44,10 +46,10 @@ class ClassProduto extends ClassConexao
 
     public function read($id, $descricao, $valor_produto, $estoque)
     {
+        $customLogger = new CustomLogger();
 
         try {
             $Bfetch = $this->dB = $this->conexaoDb()->prepare("SELECT productCode, productName, productLine, productDescription FROM classicmodels.products");
-
             $Bfetch->execute();
 
             //Recupera as linhas via fetchAll
@@ -56,7 +58,6 @@ class ClassProduto extends ClassConexao
             //Quantas linhas retornaram
             $linhas = $Bfetch->rowCount();
 
-            $i = 0;
             $dados = array();
 
             if ($linhas > 0) {
@@ -78,14 +79,15 @@ class ClassProduto extends ClassConexao
                     "linhas" => $linhas
                 ];
 
+                $customLogger->logDebug("Listagem função read");
+                
                 return json_encode($items);
             }
         } catch (Exception $e) {
-            $msgStatus = __FUNCTION__ . ' - ' . $e;
-            $acao = get_class($this);
-            echo $msgStatus . ' - ' . $acao;
 
-            //$LogController->gravarLog($msgStatus, $acao);
+            $msgStatus = __FUNCTION__ . ' - ' . $e->getMessage();
+            $acao = get_class($this);
+
             $item = [
                 "status" => '403',
                 "msg" => $acao . ':' . $msgStatus,
@@ -93,15 +95,15 @@ class ClassProduto extends ClassConexao
                 "linhas" => 0
             ];
 
-            $res = json_encode($item);
-            return $res;
+            $customLogger->logError("ERROR: " .  $msgStatus.' - '.$acao);
+            
+            $response = json_encode($item);
+            return $response;
         }
     }
 
-
     public function update($id, $descricao, $valor_produto, $estoque)
     {
-
         try {
             $Bfetch = $this->dB = $this->conexaoDb()->prepare("UPDATE `db-site`.`produto` SET descricao = :descricao, valor_produto = :valor_produto, estoque = :estoque WHERE (id = :id)");
             $Bfetch->bindParam(":id", $id, \PDO::PARAM_INT);
@@ -145,3 +147,4 @@ class ClassProduto extends ClassConexao
         }
     }
 }
+

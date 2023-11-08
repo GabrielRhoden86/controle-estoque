@@ -24,7 +24,7 @@
              success: function (obj) {
                 Swal.fire({
                    title: obj.result.msg,
-                   text: 'Agora você será direcionado para realizar o upload de images para o produto cadastrado!',
+                   text: 'Produto cadastrado!. Agora cadastre imagens do produto',
                    type: 'success',
                    confirmButtonText: 'Ok',
                   allowOutsideClick: false,          

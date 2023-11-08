@@ -4,7 +4,6 @@ namespace App\Controller;
 use Exception;
 use Src\Classes\ClassRender;
 use App\Model\ClassProduto;
-
 use Src\Interfaces\InterfaceView;
 
 class ControllerCadastroProduto extends ClassProduto

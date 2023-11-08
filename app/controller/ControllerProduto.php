@@ -24,7 +24,6 @@ class ControllerProduto extends ClassProduto
             $render->setDir("produto");
             $render->renderLayout();
         }
-
     }
 
     public function recVariaveis()
@@ -58,41 +57,38 @@ class ControllerProduto extends ClassProduto
         $linhasTab = "";
         $msgAcao = "Inicio";
         $ObjCadastro = new ClassProduto();
-        $itemsLoja = [];
+        $itemsLoja = array();
         $arrResult = json_decode($ObjCadastro->read(0, "", "", ""));
 
-         //$linhasCab .=  "<th>Editar</th>";
+        //$linhasCab .=  "<th>Editar</th>";
         //$linhasCab .=  "<th>Excluir</th>";
-        //$linhasCab .=  "<th>productCode</th>";
-        //$linhasCab .= "<th>productName</th>";
-        //$linhasCab .=  "<th>productLine</th>";
-        //$linhasCab .=  "<th>productDescription</th>";
+        $linhasCab .=  "<th>Id Produto</th>";
+        $linhasCab .= "<th>Nome</th>";
+        $linhasCab .=  "<th>Linha</th>";
+        $linhasCab .=  "<th>Descrição</th>";
 
         if ($arrResult->linhas > 0) {
             foreach ($arrResult->result as $val => $itemResult) {
 
-                //$linhasTab .= "<tr>";
-                //$linhasTab .= '<td ><a href="http://localhost/mercado/editar-produto/?id=' . $itemResult->id . '&descricao=' . $itemResult->descricao . '&valor_produto=' . $itemResult->valor_produto . '&estoque=' . $itemResult->estoque . '"><img src="public\img\edit.png"></a></td>';
-                //$linhasTab .=   "<td id='$itemResult->productCode'  title='Delete' data-toggle='modal' data-target='#my-modal'class='icons'><img src='public\img\delete.gif' width='17' height='17'></td>";
-                $linhasTab .=   $itemResult->productCode;
-                $linhasTab .=   $itemResult->productName;
-                $linhasTab .=   $itemResult->productLine;
-                $linhasTab .=   $itemResult->productDescription;
-                //$linhasTab .=   "<td>img</td>";
-                //$linhasTab .= "</tr>";
+                $linha = [
+                    "productCode" => $itemResult->productCode,
+                    "productName" => $itemResult->productName,
+                    "productLine" => $itemResult->productLine,
+                    "productDescription" => $itemResult->productDescription
+                ];
 
-               $itemsLoja = $itemResult;
+                $itemsLoja[] = $linha; 
             }
+ 
+            $msgAcao .=  'Function '. __FUNCTION__ .' - '.get_class($this).' | Buscou registros'; //colocação condição para diferente de null
 
-            $msgAcao .= '|Buscou dados';
         } else {
 
-            $msgAcao .= '|Não buscou dados';
+            $msgAcao .=  'Function '. __FUNCTION__ .' - '.get_class($this).' |Não Buscou registros';
         }
 
         $result = array(
-            "tabCab" =>  $linhasCab,
-            "tabLinha" => $linhasTab,
+            "tabelaHeader" =>  $linhasCab,
             "itemsLoja" =>  $itemsLoja,
         );
         $itens = array(
@@ -114,7 +110,7 @@ class ControllerProduto extends ClassProduto
     public function deleting()
     {
         $this->recVariaveis();
-
+        
         foreach ($this->id as $idDelete) :
             $this->delete($idDelete);
         endforeach;
