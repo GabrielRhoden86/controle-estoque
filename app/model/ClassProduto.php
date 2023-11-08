@@ -10,6 +10,14 @@ use Exception;
 class ClassProduto extends ClassConexao
 {
     private $dB;
+    private $customLogger;
+
+
+    public function __construct()
+    {
+        $this->customLogger = new CustomLogger();
+
+    }
 
     protected function create($descricao, $valor_produto, $estoque)
     {
@@ -17,39 +25,26 @@ class ClassProduto extends ClassConexao
 
         try {
             $this->dB = $this->conexaoDb()->prepare("INSERT into produto values(:id, :descricao, :valor_produto, :estoque)");
-
             $this->dB->bindParam(":id", $id, \PDO::PARAM_INT);
             $this->dB->bindParam(":descricao", $descricao, \PDO::PARAM_STR);
             $this->dB->bindParam(":valor_produto", $valor_produto, \PDO::PARAM_STR);
             $this->dB->bindParam(":estoque", $estoque, \PDO::PARAM_STR);
             $this->dB->execute();
+
         } catch (Exception $e) {
-
-            $msgStatus = __FUNCTION__ . ' - ' . $e;
-            $acao = get_class($this);
-            echo $msgStatus . ' - ' . $acao;
-
-            //$LogController->gravarLog($msgStatus, $acao);
-
-            $item = array(
-                "status" => '403',
-                "msg" => $acao . ':' . $msgStatus,
-                "result" => array(),
-                "linhas" => 0
-            );
-
-            $res = json_encode($item);
-
-            return $res;
+            $msgStatus = __FUNCTION__ . ' - ' . $e->getMessage();
+            $class = get_class($this);
+            $this->customLogger->logError("ERROR FUNCTION: " .   $msgStatus.' - '.$class);
         }
     }
 
-    public function read($id, $descricao, $valor_produto, $estoque)
+    public function read()
     {
-        $customLogger = new CustomLogger();
 
         try {
-            $Bfetch = $this->dB = $this->conexaoDb()->prepare("SELECT productCode, productName, productLine, productDescription FROM classicmodels.products");
+            $Bfetch = $this->dB = $this->conexaoDb()->prepare(
+            "SELECT productCode, productName, productLine, productDescription 
+             FROM classicmodels.products");
             $Bfetch->execute();
 
             //Recupera as linhas via fetchAll
@@ -79,26 +74,14 @@ class ClassProduto extends ClassConexao
                     "linhas" => $linhas
                 ];
 
-                $customLogger->logDebug("Listagem função read");
-                
+                //$customLogger->logDebug("Listagem função read");
                 return json_encode($items);
             }
         } catch (Exception $e) {
 
             $msgStatus = __FUNCTION__ . ' - ' . $e->getMessage();
-            $acao = get_class($this);
-
-            $item = [
-                "status" => '403',
-                "msg" => $acao . ':' . $msgStatus,
-                "result" => array(),
-                "linhas" => 0
-            ];
-
-            $customLogger->logError("ERROR: " .  $msgStatus.' - '.$acao);
-            
-            $response = json_encode($item);
-            return $response;
+            $class = get_class($this);
+            $this->customLogger->logError("ERROR FUNCTION: " .   $msgStatus.' - '.$class);
         }
     }
 
@@ -110,40 +93,28 @@ class ClassProduto extends ClassConexao
             $Bfetch->bindParam(":descricao", $descricao, \PDO::PARAM_STR);
             $Bfetch->bindParam(":valor_produto", $valor_produto, \PDO::PARAM_STR);
             $Bfetch->bindParam(":estoque", $estoque, \PDO::PARAM_STR);
+
             $Bfetch->execute();
         } catch (Exception $e) {
-            $msgStatus = __FUNCTION__ . ' - ' . $e;
-            $acao = get_class($this);
-            echo $msgStatus . ' - ' . $acao;
+            $msgStatus = __FUNCTION__ . ' - ' . $e->getMessage();
+            $class = get_class($this);
+            $this->customLogger->logError("ERROR FUNCTION: " .   $msgStatus.' - '.$class);
+            
         }
     }
 
     public function delete($id)
     {
-
         try {
             $Bfetch = $this->dB = $this->conexaoDb()->prepare("DELETE FROM `db-site`.`produto` WHERE id = :id");
             $Bfetch->bindParam(":id", $id, \PDO::PARAM_INT);
             $Bfetch->execute();
+
         } catch (Exception $e) {
-
-            $msgStatus = __FUNCTION__ . ' - ' . $e;
-            $acao = get_class($this);
-            echo $msgStatus . ' - ' . $acao;
-
-            //$LogController->gravarLog($msgStatus, $acao);
-            //$logger->error($msgStatus, ["action" => $acao]);
-
-            $item = array(
-                "status" => '403',
-                "msg" => $acao . ':' . $msgStatus,
-                "result" => array(),
-                "linhas" => 0
-            );
-
-            $res = json_encode($item);
-
-            return $res;
+            $msgStatus = __FUNCTION__ . ' - ' . $e->getMessage();
+            $class = get_class($this);
+            $this->customLogger->logError("ERROR FUNCTION: " .   $msgStatus.' - '.$class);
+            
         }
     }
 }

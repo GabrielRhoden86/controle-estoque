@@ -41,10 +41,8 @@ class ClassCadastroImagem extends ClassConexao
         }
     }
 
-
     public function deletarProduto($id)
     {
-
         try {
             $Bfetch = $this->dB = $this->conexaoDb()->prepare("DELETE FROM `db-site`.`produto` WHERE id = :id");
             $Bfetch->bindParam(":id", $id, \PDO::PARAM_INT);

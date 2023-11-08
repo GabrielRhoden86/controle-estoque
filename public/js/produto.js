@@ -37,7 +37,7 @@ $(document).ready(function () {
         tabelaOcorAtivas.destroy();
         $("#tabelaHeader").html(obj.result.tabelaHeader);
 
-        alert(obj.msgAcao);
+        //alert(obj.msgAcao);
 
         //#################### INÍCIO PAGINAÇÃO ####################
         var dados = obj.result.itemsLoja;
@@ -53,6 +53,8 @@ $(document).ready(function () {
 
           for (var i = start; i < end && i < dados.length; i++) {
             var row = $("<tr></tr>");
+            row.append($("<td></td>").text(dados[i]));
+            row.append($("<td></td>").text(dados[i]+'icon'));
             row.append($("<td></td>").text(dados[i].productCode));
             row.append($("<td></td>").text(dados[i].productName));
             row.append($("<td></td>").text(dados[i].productLine));

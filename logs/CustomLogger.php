@@ -27,10 +27,10 @@ class CustomLogger
         $this->logger->pushProcessor(function ($record) {
             //$record["extra"]["SERVER"] = $_SERVER;
             $record["extra"]["HTTP_HOST"] = $_SERVER["HTTP_HOST"];
-            $record["extra"]["OPENSSL_CONF"] = $_SERVER["OPENSSL_CONF"];
-            $record["extra"]["REQUEST_URI"] = $_SERVER["REQUEST_URI"];
+            //$record["extra"]["OPENSSL_CONF"] = $_SERVER["OPENSSL_CONF"];
+            //$record["extra"]["REQUEST_URI"] = $_SERVER["REQUEST_URI"];
             $record["extra"]["REQUEST_METHOD"] = $_SERVER["REQUEST_METHOD"];
-            $record["extra"]["HTTP_USER_AGENT"] = $_SERVER["HTTP_USER_AGENT"];
+            //$record["extra"]["HTTP_USER_AGENT"] = $_SERVER["HTTP_USER_AGENT"];
             return $record;
         });
     }
@@ -41,6 +41,7 @@ class CustomLogger
     //         $this->logger->debug($message, $context);
     //     }
 
+    
     public function logDebug($message)
     {
         $this->logger->debug($message);

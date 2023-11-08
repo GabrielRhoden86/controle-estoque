@@ -2,7 +2,7 @@
 
 <div class="table-responsive">
 
-  <div class="container table-produto mb-5 mt-5 bg-white">
+  <div class="col-md-9 container table-produto mb-5 mt-5 bg-white">
     <div class="row">
 
       <h3 class="text-center text-muted w-100">

@@ -55,13 +55,13 @@ class ControllerProduto extends ClassProduto
     {
         $linhasCab = "";
         $linhasTab = "";
-        $msgAcao = "Inicio";
+        $msgAcao = "";
         $ObjCadastro = new ClassProduto();
         $itemsLoja = array();
         $arrResult = json_decode($ObjCadastro->read(0, "", "", ""));
 
-        //$linhasCab .=  "<th>Editar</th>";
-        //$linhasCab .=  "<th>Excluir</th>";
+        $linhasCab .=  "<th>Editar</th>";
+        $linhasCab .=  "<th>Excluir</th>";
         $linhasCab .=  "<th>Id Produto</th>";
         $linhasCab .= "<th>Nome</th>";
         $linhasCab .=  "<th>Linha</th>";
@@ -80,11 +80,11 @@ class ControllerProduto extends ClassProduto
                 $itemsLoja[] = $linha; 
             }
  
-            $msgAcao .=  'Function '. __FUNCTION__ .' - '.get_class($this).' | Buscou registros'; //colocação condição para diferente de null
+            $msgAcao .=  'Function '. __FUNCTION__ .' - '.get_class($this).' | Buscou registros'; 
 
         } else {
 
-            $msgAcao .=  'Function '. __FUNCTION__ .' - '.get_class($this).' |Não Buscou registros';
+            $msgAcao .=  'Function '. __FUNCTION__ .' - '.get_class($this).' |Nao Buscou registros';
         }
 
         $result = array(
