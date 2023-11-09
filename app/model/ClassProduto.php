@@ -23,8 +23,8 @@ class ClassProduto extends ClassConexao
         $id = 0;
 
         try {
-            $this->dB = $this->conexaoDb()->prepare("INSERT into produto values(:id, :descricao, :valor_produto, :estoque)");
-            $this->dB->bindParam(":id", $id, \PDO::PARAM_INT);
+            $this->dB = $this->conexaoDb()->prepare("INSERT into produto values(:descricao, :valor_produto, :estoque)");
+           // $this->dB->bindParam(":id", $id, \PDO::PARAM_INT);
             $this->dB->bindParam(":descricao", $descricao, \PDO::PARAM_STR);
             $this->dB->bindParam(":valor_produto", $valor_produto, \PDO::PARAM_STR);
             $this->dB->bindParam(":estoque", $estoque, \PDO::PARAM_STR);
@@ -40,10 +40,8 @@ class ClassProduto extends ClassConexao
     public function read()
     {
         try {
-            $Bfetch = $this->dB = $this->conexaoDb()->prepare(
-            "SELECT productCode, productName, productLine, productDescription 
-             FROM classicmodels.products");
-            $Bfetch->execute();
+            $Bfetch = $this->dB = $this->conexaoDb()->prepare("SELECT productCode, productName, productLine, productDescription  FROM classicmodels.products");
+            $Bfetch->execute(); 
 
             //Recupera as linhas via fetchAll
             $result = $Bfetch->fetchAll();
@@ -72,7 +70,6 @@ class ClassProduto extends ClassConexao
                     "linhas" => $linhas
                 ];
 
-                //$customLogger->logDebug("Listagem função read");
                 return json_encode($items);
             }
         } catch (Exception $e) {

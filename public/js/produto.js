@@ -54,13 +54,18 @@ $(document).ready(function () {
           for (var i = start; i < end && i < dados.length; i++) {
             var row = $("<tr></tr>");
             row.append($("<td></td>").text(dados[i]));
-            row.append($("<td></td>").text(dados[i]+'icon'));
+            row.append($("<td></td>").text(dados[i]));
             row.append($("<td></td>").text(dados[i].productCode));
             row.append($("<td></td>").text(dados[i].productName));
             row.append($("<td></td>").text(dados[i].productLine));
+          
             row.append(
-              $("<textarea rows='3' cols='65' class='mb-1 p-2 mt-2' style='border:solid #F3F3F4 2px;'><td></td></textarea>").text(dados[i].productDescription)
-            );
+              $("<td class='p-0'></td>").append(
+                  $("<textarea rows='5' cols='60' class='mb-1 p-2 mt-2 text-muted' style='max-width: 100%; width: 100%;'></textarea>").text(dados[i].productDescription)
+
+              )
+          );
+          
             $("#table-body").append(row);
           }
 
