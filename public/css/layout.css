@@ -61,11 +61,13 @@ footer {
     display: block;
 }
 
-
 /* botão sweet alert */div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm  {
     background-color: #3165A5 !important;
-  }
-
+    padding-left:9px;
+    padding-right:10px;
+    padding-bottom:6px;
+    padding-top:6px;
+}
 
 
   

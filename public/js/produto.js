@@ -125,30 +125,23 @@ $(document).ready(function () {
       },
 
       error: function (xhr, errorThrown) {
-        var erroJson = JSON.stringify(xhr);
 
         console.error("Erro! readyState:", xhr.readyState);
         console.error("Erro! responseText:", xhr.responseText);
         console.error("Erro! status:", xhr.status);
         console.error("Erro! statusText:", xhr.statusText);
-
         console.error("Erro! errorThrown:", errorThrown);
 
-
-
-    
-      
-
-        // Swal.fire({
-        //   title: 'Erro !',
-        //   type: 'warning',
-        //   confirmButtonText: 'Ok',
-        //   confirmButtonClass: 'custom-confirm-button', 
-        //   allowOutsideClick: false,
-        //   width: '900px',
-        //   html: '<div style="max-height:400px; overflow-y: auto;">Erro!' + erroJson + '</div>'
-        //   //html: '<div style="max-height:400px; overflow-y: auto;">Erro! ao listar registros</div>'
-        // });
+        Swal.fire({
+          title: 'Erro !',
+          type: 'warning',
+          confirmButtonText: 'Ok',
+          confirmButtonClass: 'custom-confirm-button', 
+          allowOutsideClick: false,
+          width: '300px',
+          //html: '<div style="max-height:400px; overflow-y: auto;">Erro!' + erroJson + '</div>'
+          html: '<div style="max-height:400px; overflow-y: auto;">Falha ao listar registros</div>'
+        });
       }
     });
   }

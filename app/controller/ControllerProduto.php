@@ -62,12 +62,12 @@ class ControllerProduto extends ClassProduto
         $itemsLoja = array();
         $arrResult = json_decode($ObjCadastro->read(0, "", "", ""));
 
-        $linhasCab .=  "<th>Excluir</th>";
-        $linhasCab .=  "<th>Editar</th>";
-        $linhasCab .=  "<th>Id Produto</th>";
-        $linhasCab .= "<th>Nome</th>";
-        $linhasCab .=  "<th>Linha</th>";
-        $linhasCab .=  "<th>Descrição</th>";
+        // $linhasCab .=  "<th>Excluir</th>";
+        // $linhasCab .=  "<th>Editar</th>";
+        // $linhasCab .=  "<th>Id Produto</th>";
+        // $linhasCab .= "<th>Nome</th>";
+        // $linhasCab .=  "<th>Linha</th>";
+        // $linhasCab .=  "<th>Descrição</th>";
 
         if ($arrResult->linhas > 0) {
             foreach ($arrResult->result as $val => $itemResult) {

@@ -47,7 +47,7 @@ class ClassProduto extends ClassConexao
     public function read()
     {
         try {
-            $query = "SELECT roductCode, productName, productLine, productDescription FROM classicmodels.products";
+            $query = "SELECT productCode, productName, productLine, productDescription FROM classicmodels.products";
             $statement = $this->conexaoDb()->prepare($query);
     
             $statement->execute();
@@ -68,8 +68,6 @@ class ClassProduto extends ClassConexao
                 }
     
                 $response = [
-                    "status" => "200",
-                    "msg" => "OK",
                     "result" => $dados,
                     "linhas" => $rows
                 ];
