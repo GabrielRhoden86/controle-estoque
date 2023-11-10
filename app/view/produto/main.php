@@ -1,19 +1,15 @@
-<div class="row col-md-12">
-
+<div class="row">
   <div class="table-responsive">
-
-    <div class="col-md-10 container table-produto mb-5 mt-5 bg-white">
+    <div class="col-md-8 container table-produto mb-5 mt-5 bg-white"style="border:solid #FFFFFF 3px;" >
       <div class="row">
-        <table class="table table-hover text-center bg-white">
-          <h3 class="text-center text-muted w-100 col-md-12">
-            <div>
+       <table class="table table-hover text-center bg-white">
+        <h3 class="text-center text-muted w-100 col-md-12">
               Produtos
               <a type="button" href="<?php echo DIRPAGE . "cadastro-produto"; ?>" class="button-add-produto">
                 <i class="bi-plus-circle"></i>
-            </div>
             </a>
-      </div>
-      </h3>
+          </div>
+       </h3>
       <thead>
         <tr id="tabelaHeader" class="text-muted">
           <!--####################### CONTEÚDO CABEÇALHO TABELA #######################-->
@@ -24,7 +20,7 @@
       </tbody>
 
       </table>
-      <div class="d-flex flex-wrap justify-content-end w-100 pb-4">
+      <div class="d-flex flex-wrap justify-content-end w-100 pb-4 mr-2">
         <div id="pagination" class="pagination"></div>
       </div>
     </div>
@@ -74,7 +70,9 @@
 </div>
 
 <style>
-   td{
-    border-right:#F0EFEF 1px solid;
+  *{
+    /* border:solid red 1px; */
   }
+
+
 </style>

@@ -22,7 +22,7 @@
 </head>
 
 <body class="body-content"> 
-  <header class="bg-white">
+  <header class="bg-white w-100">
     <?php $this->addHeader(); ?>
     <div class="jumbotron-fluid text-center topHeader">
       <h4 class="text-light p-5">Controle de Estoque</h4>
@@ -78,8 +78,4 @@
     margin-top: auto;
   }
   
-
-*{
-  /* bordeR:solid red 1px; */
-}
 </style>

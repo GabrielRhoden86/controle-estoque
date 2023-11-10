@@ -41,9 +41,11 @@ class ControllerProduto extends ClassProduto
         if (!$this->descricao == "" or !$this->valor_produto == "" or !$this->estoque == "") {
             parent::create($this->descricao, $this->valor_produto, $this->estoque);
         }
+
         $result = array(
             "msg" =>  "Cadastro Realizado Com  Sucesso!"
         );
+        
         $itens = array(
             "result" => $result,
         );
@@ -60,8 +62,8 @@ class ControllerProduto extends ClassProduto
         $itemsLoja = array();
         $arrResult = json_decode($ObjCadastro->read(0, "", "", ""));
 
-        $linhasCab .=  "<th>Editar</th>";
         $linhasCab .=  "<th>Excluir</th>";
+        $linhasCab .=  "<th>Editar</th>";
         $linhasCab .=  "<th>Id Produto</th>";
         $linhasCab .= "<th>Nome</th>";
         $linhasCab .=  "<th>Linha</th>";
@@ -69,31 +71,25 @@ class ControllerProduto extends ClassProduto
 
         if ($arrResult->linhas > 0) {
             foreach ($arrResult->result as $val => $itemResult) {
-
                 $linha = [
                     "productCode" => $itemResult->productCode,
                     "productName" => $itemResult->productName,
                     "productLine" => $itemResult->productLine,
                     "productDescription" => $itemResult->productDescription
                 ];
-
                 $itemsLoja[] = $linha; 
             }
- 
             $msgAcao .=  'Function '. __FUNCTION__ .' - '.get_class($this).' | Buscou registros'; 
-
         } else {
-
             $msgAcao .=  'Function '. __FUNCTION__ .' - '.get_class($this).' |Nao Buscou registros';
         }
-
         $result = array(
             "tabelaHeader" =>  $linhasCab,
             "itemsLoja" =>  $itemsLoja,
         );
         $itens = array(
             "result" => $result,
-            "msgAcao" => $msgAcao
+            "msgAcao" => $msgAcao,  
         );
 
         echo json_encode($itens);
@@ -102,7 +98,9 @@ class ControllerProduto extends ClassProduto
     function putUpdate()
     {
         $this->recVariaveis();
+
         parent::update($this->id, $this->descricao, $this->valor_produto, $this->estoque);
+
         return header("Location:http://localhost/controle-estoque/editar-produto");
         exit();
     }

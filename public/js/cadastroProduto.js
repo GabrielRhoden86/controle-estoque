@@ -41,10 +41,19 @@
              },
              error: function (xhr, ajaxOptions, thrownError) {
                 var erroJson = JSON.stringify(xhr);
-                alert("ERRO!! Buscar risco/afetação " + thrownError + "-" + erroJson);
-                //var msgLog = 'Buscar risco/afetação , ERRO :' + erroJson;
-                //var acaoLog = "erro_ajax";
-                //gravarLog(msgLog, acaoLog);
+                //alert("ERRO!! Buscar risco/afetação " + thrownError + "-" + erroJson);
+        
+                Swal.fire({
+                  title: 'Erro !',
+                  type: 'warning',
+                  confirmButtonText: 'Ok',
+                  confirmButtonClass: 'custom-confirm-button', //através dessa classe é possivel alterar o css
+                  allowOutsideClick: false,
+                  width: '900px',
+                  html: '<div style="max-height:400px; overflow-y: auto;">Erro!' + erroJson + '</div>'
+                });
+
+
              }
           })
         });

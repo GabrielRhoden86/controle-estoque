@@ -6,3 +6,12 @@
 [2023-11-08 15:10:04] web.ERROR: FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductCode' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}
 [2023-11-08 15:11:29] web.ERROR: FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductCode' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}
 [2023-11-08 15:11:57] web.ERROR: FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductCode' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}
+[2023-11-09 08:51:18] web.INFO: EXECUTED FUNCTION: read - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}
+[2023-11-10 12:42:27] web.CRITICAL: FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductCode' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}
+[2023-11-10 12:44:54] web.CRITICAL: FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductCode' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}
+[2023-11-10 12:45:09] web.CRITICAL: FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductCode' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}
+[2023-11-10 12:45:23] web.CRITICAL: FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductCode' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}
+[2023-11-10 12:45:49] web.CRITICAL: FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductCode' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}
+[2023-11-10 12:45:57] web.CRITICAL: FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductCode' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}
+[2023-11-10 12:45:57] web.CRITICAL: FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductCode' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}
+[2023-11-10 12:46:06] web.CRITICAL: FUNCTION: read - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roductCode' in 'field list' - App\Model\ClassProduto [] {"HTTP_HOST":"localhost","REQUEST_METHOD":"POST"}

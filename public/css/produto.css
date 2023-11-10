@@ -9,14 +9,10 @@
  padding:1%;
 }
 
-.icons {
-  text-align: center;
+td{
+  font-size: 0.9rem;
 }
 
-.icons img {
-  cursor: pointer;
-  margin-left: 13px;
-}
 
 /* Estilo Tabela Final da Página (Fim) */
 
@@ -64,3 +60,5 @@ img {
   color:#3165A5 !important;
   font-size: 1em !important;
 }
+
+

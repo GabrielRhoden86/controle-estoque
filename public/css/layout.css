@@ -62,6 +62,9 @@ footer {
 }
 
 
+/* botão sweet alert */div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm  {
+    background-color: #3165A5 !important;
+  }
 
 
 
