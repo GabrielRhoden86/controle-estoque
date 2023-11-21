@@ -28,7 +28,7 @@ class ControllerProduto extends ClassProduto
 
     public function recVariaveis()
     {
-        isset($_POST['id']) ? $this->id = $_POST['id'] : "Falha Id";
+        //isset($_POST['id']) ? $this->id = $_POST['id'] : "Falha Id";
         isset($_POST['descricao']) ? $this->descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_SPECIAL_CHARS) : "FALHA POST";
         isset($_POST['valor_produto']) ? $this->valor_produto = filter_input(INPUT_POST, 'valor_produto', FILTER_SANITIZE_SPECIAL_CHARS) : "FALHA POST";
         isset($_POST['estoque']) ? $this->estoque = filter_input(INPUT_POST, 'estoque', FILTER_SANITIZE_SPECIAL_CHARS) : "FALHA POST";
@@ -62,12 +62,6 @@ class ControllerProduto extends ClassProduto
         $itemsLoja = array();
         $arrResult = json_decode($ObjCadastro->read(0, "", "", ""));
 
-        // $linhasCab .=  "<th>Excluir</th>";
-        // $linhasCab .=  "<th>Editar</th>";
-        // $linhasCab .=  "<th>Id Produto</th>";
-        // $linhasCab .= "<th>Nome</th>";
-        // $linhasCab .=  "<th>Linha</th>";
-        // $linhasCab .=  "<th>Descrição</th>";
 
         if ($arrResult->linhas > 0) {
             foreach ($arrResult->result as $val => $itemResult) {
