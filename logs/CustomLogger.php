@@ -35,37 +35,43 @@ class CustomLogger
         });
     }
 
-    
+    //depuração 
     public function logDebug($message)
     {
         $this->logger->debug($message);
     }
     
+    //confirmam que as coisas estão funcionando como esperado.
     public function logInfo($message)
     {
         $this->logger->info($message);
     }
 
+    //registrar eventos que são de interesse durante a execução normal, mas não indicam um problema.
     public function logNotice($message, )
     {
         $this->logger->notice($message);
     }
 
+    // para registrar uma tentativa de login mal sucedida.
     public function logWarning($message)
     {
         $this->logger->warning($message);
     }
 
+    //para registrar um erro de conexão com o banco de dados.
     public function logError($message)
     {
         $this->logger->error($message);
     }
 
+    //para registrar um serviço(function) que está indisponível.
     public function logCritical($message)
     {
         $this->logger->critical($message);
     }
 
+    //para registrar um erro crítico que precisa ser corrigido imediatamente. que indisponibiliza o serviço
     public function logAlert($message)
     {
         $this->logger->alert($message);

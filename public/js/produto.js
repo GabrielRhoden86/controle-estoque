@@ -37,7 +37,7 @@ $(document).ready(function () {
         tabelaOcorAtivas.destroy();
         $("#tabelaHeader").html(obj.result.tabelaHeader);
 
-        //alert(obj.msgAcao);
+        //alert(obj.linhasdb);
 
         //#################### INÍCIO PAGINAÇÃO ####################
         var dados = obj.result.itemsLoja;
@@ -52,17 +52,17 @@ $(document).ready(function () {
           var end = start + rowsPerPage;
 
           for (var i = start; i < end && i < dados.length; i++) {
-            var row = $("<tr></tr>");
-            row.append($("<td></td>").text(dados[i]));
-            row.append($("<td></td>").text(dados[i]));
+            var row = $("<tr></tr>"); 
+
+            row.append($("<td></td>").append($("<img class='d-flex justify-content-center'>").attr({"src": "public/img/delete.gif","width":"20px","height":"20px" }))); 
+            row.append($("<td></td>").append($("<img class='d-flex justify-content-center'>").attr({"src": "public/img/edit.png","width":"18px","height":"20px" })));        
             row.append($("<td></td>").text(dados[i].productCode));
             row.append($("<td></td>").text(dados[i].productName));
             row.append($("<td></td>").text(dados[i].productLine));
           
             row.append(
               $("<td class='p-0'></td>").append(
-                  $("<textarea rows='5' cols='60' class='mb-1 p-2 mt-2 text-muted' style='max-width: 100%; width: 100%;'></textarea>").text(dados[i].productDescription)
-
+                  $("<textarea rows='5' cols='60' class='mb-1 p-2 mt-2 text-muted' style='max-width: 95%; width: 95%;'></textarea>").text(dados[i].productDescription)
               )
           );
           
@@ -113,7 +113,9 @@ $(document).ready(function () {
           } else {
             currentPage = parseInt(text);
           }
+
           updateTable();
+
         });
 
         //#################### FIM PAGINAÇÃO ####################
@@ -122,19 +124,23 @@ $(document).ready(function () {
         $('.mask-loading').hide();
       },
 
-      error: function (xhr, ajaxOptions) {
-        var erroJson = JSON.stringify(xhr);
+      error: function (xhr, errorThrown) {
 
-        //alert("ERRO! listarProdutos risco/afetação " + thrownError + "-" + erroJson);
+        console.error("Erro! readyState:", xhr.readyState);
+        console.error("Erro! responseText:", xhr.responseText);
+        console.error("Erro! status:", xhr.status);
+        console.error("Erro! statusText:", xhr.statusText);
+        console.error("Erro! errorThrown:", errorThrown);
 
         Swal.fire({
           title: 'Erro !',
           type: 'warning',
           confirmButtonText: 'Ok',
-          confirmButtonClass: 'custom-confirm-button', //através dessa classe é possivel alterar o css
+          confirmButtonClass: 'custom-confirm-button', 
           allowOutsideClick: false,
-          width: '900px',
-          html: '<div style="max-height:400px; overflow-y: auto;">Erro!' + erroJson + '</div>'
+          width: '300px',
+          //html: '<div style="max-height:400px; overflow-y: auto;">Erro!' + erroJson + '</div>'
+          html: '<div style="max-height:400px; overflow-y: auto;">Falha ao listar registros</div>'
         });
       }
     });
