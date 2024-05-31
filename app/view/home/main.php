@@ -1,2 +1,2 @@
 
-<h2>Home (Home-Main)</h2>
+<h2>Home (Home)</h2>
