@@ -47,7 +47,7 @@ class Dispatch extends ClassRoutes
         }
     }
 
-    #Método de adição método de controller
+    # Método de adição método de controller
     public function addMethod()
     {
         if (method_exists($this->obj, $this->parseUrl()[1])) {
