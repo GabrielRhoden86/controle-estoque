@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Classes;
+namespace src\classes;
 
 use Src\Traits\TraitUrlParse;
 
