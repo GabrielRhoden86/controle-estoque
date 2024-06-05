@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Src\Classes\ClassRoutes;
+use src\classes\ClassRoutes;
 
 class Dispatch extends ClassRoutes
 {
